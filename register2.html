@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="table.js">
+
+    <script>
+        function random_function() {
+            var a = document.getElementById("country").value;
+            if (a === "INDIA") {
+                var arr = ["--select-state--", "Maharashtra", "Delhi"];
+            }
+            else if (a === "USA") {
+                var arr = ["--select-state--","Washington", "Texas"];
+            }
+
+            var string = "";
+
+            for (i = 0; i < arr.length; i++) {
+                string = string + "<option value=" + arr[i] + ">" + arr[i] + "</option>";
+            }
+            document.getElementById("state").innerHTML = string;
+        }
+        function random_function2() {
+            var a = document.getElementById("state").value;
+            if (a === "Maharashtra") {
+                var arr = ["--select-city--", "Mumbai", "Pune"];
+            }
+            else if (a === "Delhi") {
+                var arr = ["--select-city--","Agra", "Rohini"];
+            }
+            if(a === "Washington") {
+            var arr = ["--select-city--", "Seattle", "Spokane"];
+            }
+            else if (a === "Texas") {
+                var arr = ["--select-city--","Austin", "Austin"];
+            }
+        
+
+
+            var string = "";
+
+            for (i = 0; i < arr.length; i++) {
+                string = string + "<option value=" + arr[i] + ">" + arr[i] + "</option>";
+            }
+            document.getElementById("city").innerHTML = string;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="hero">
+        <div class="form-box">
+
+            <div class="button-box">
+                <div id="btn"></div>
+
+
+                <button type="button" class="toggle-btn"> Registration </button>
+
+
+            </div>
+
+
+            <form id="register" class="input-group">
+
+
+                <input type="text" class="input-field" placeholder="Full Name   " required>
+
+                <input type="text" class="input-field" placeholder="address line 1" required>
+                <input type="text" class="input-field" placeholder="address line 2">
+
+
+                <input id="country" list="coun" class="input-field" name="b" placeholder="country" required onchange="random_function()" >
+                <datalist id="coun" >
+                    <select >
+                    <option value="INDIA"></option>
+                    <option value="USA"></option>
+                    </select>
+
+    
+                </datalist>
+                <!-- 
+                <select id="country"  class="input-field" onchange="random_function()">
+                    <option value="INDIA">--select-state--</option>
+                    <option value="INDIA">INDIA</option>
+                    <option value="USA">USA</option>
+                </select>
+ -->
+
+                <select id="state" class="input-field" onchange="random_function2()">
+            
+                </select>
+                <select id="city" class="input-field" ></select>
+            
+<br>
+<br>
+                <button type="submit" class="submit-btn">next</button>
+
+
+            </form>
+
+
+            <!--             
+            <form id="register" class="input-group" action="">
+                <input type="text" class="input-field" placeholder="Full Name   " required>
+
+                <input type="text" class="input-field" placeholder="address line 1" required>
+                <input type="text" class="input-field" placeholder="address line 2">
+                
+                    <input list="city" class="input-field" placeholder="state" >
+                    <datalist id="state" >
+                    <option value="Maharashtra"></option>
+                    <option value="Madhya pradesh"></option>
+                    <option value="karnataka"></option>
+                    <option value="Goa"></option>
+                    </datalist>
+                
+
+
+                <input type="text" class="input-field" placeholder="city" required>
+
+                <button type="submit" class="submit-btn">next</button>
+
+            </form> -->
+
+        </div>
+    </div>
+</body>
+
+</html>
